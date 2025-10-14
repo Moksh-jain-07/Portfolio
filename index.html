@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moksh Jain | Cybersecurity Portfolio</title>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600&family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+<style>
+:root {
+  --background-color: #000;
+  --primary-text-color: #fff;
+  --secondary-text-color: #aaa;
+  --accent-color: #00e6e6;
+  --accent-glow: 0 0 8px rgba(0, 230, 230, 0.5);
+  --card-background: #0a0a0a;
+  --border-color: #222;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Navbar --- */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0,230,230,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  text-shadow: var(--accent-glow);
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover { transform: scale(1.05); }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-text-color);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Sections --- */
+section {
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Home --- */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.intro-content h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 3.5rem;
+  background-color: var(--accent-color);
+  margin-left: 8px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+}
+
+.tagline {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  text-shadow: var(--accent-glow);
+}
+
+.social-links {
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: var(--secondary-text-color);
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1) translateY(-3px);
+  text-shadow: var(--accent-glow);
+}
+
+/* --- Headings --- */
+h2 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(0,230,230,0.3);
+}
+
+/* --- About --- */
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--secondary-text-color);
+  font-size: 1.1rem;
+}
+
+/* --- Skills --- */
+.skills-category-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--accent-color);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.skill-card {
+  background-color: var(--card-background);
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0,230,230,0.2);
+}
+
+.skill-card i {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: var(--secondary-text-color);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.skill-card:hover i {
+  color: var(--accent-color);
+  text-shadow: var(--accent-glow);
+}
+
+.skill-card span {
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* --- Card Style --- */
+.card {
+  background-color: var(--card-background);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) translateX(5px);
+  box-shadow: 0 0 20px rgba(0,230,230,0.2);
+}
+
+.card h3, .card h4 {
+  font-family: 'Fira Code', monospace;
+  color: var(--accent-color);
+}
+
+/* --- CTF --- */
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- Contact --- */
+.contact-info {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 1rem 0;
+  color: var(--secondary-text-color);
+  font-size: 1.1rem;
+}
+
+.contact-info i { color: var(--accent-color); }
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--secondary-text-color);
+  margin: 0 0.75rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  h2 { font-size: 2rem; }
+  .intro-content h1 { font-size: 2.5rem; }
+  .typing-cursor { height: 2.5rem; }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: var(--background-color);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .hamburger { display: flex; }
+
+  .hamburger.toggle .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.toggle .bar:nth-child(2) { opacity: 0; }
+
+  .hamburger.toggle .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+</style>
+</head>
+
+<body>
+<header class="sticky-nav">
+<nav class="container navbar">
+<a href="#home" class="nav-logo">Moksh Jain</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#ctf">CTF</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="hamburger">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</nav>
+</header>
+
+<main>
+<section id="home">
+<div class="container intro-content">
+<h1><span id="typing-text"></span><span class="typing-cursor"></span></h1>
+<p class="subtitle">Cybersecurity Student | CTF Player | Ethical Hacker</p>
+<p class="tagline">Exploring system security, ethical hacking, and digital defense.</p>
+<div class="social-links">
+<a href="https://github.com/Moksh-jain-07" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/moksh-jain2004/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://tryhackme.com/p/Beast007" target="_blank"><i class="fa-solid fa-terminal"></i></a>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<h2>About Me</h2>
+<p>I’m a cybersecurity undergraduate with a strong interest in ethical hacking, penetration testing, and CTF competitions. I enjoy tackling complex security challenges and expanding my skills in Linux, networking, and reverse engineering.</p>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<h2>Tools & Expertise</h2>
+
+<h3 class="skills-category-title">Cybersecurity & Pentesting</h3>
+<div class="skills-grid">
+<div class="skill-card"><i class="fa-solid fa-terminal"></i><span>Kali Linux</span></div>
+<div class="skill-card"><i class="fa-solid fa-bug"></i><span>Burp Suite</span></div>
+<div class="skill-card"><i class="fa-solid fa-microchip"></i><span>Ghidra</span></div>
+<div class="skill-card"><i class="fa-solid fa-shield-halved"></i><span>Metasploit</span></div>
+<div class="skill-card"><i class="fa-solid fa-water"></i><span>Wireshark</span></div>
+</div>
+
+<h3 class="skills-category-title">Tools & Platforms</h3>
+<div class="skills-grid">
+<div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git & GitHub</span></div>
+<div class="skill-card"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<h2>Projects</h2>
+<div class="card">
+<h3>Ethical Keylogger using Python</h3>
+<p>Developed a controlled keylogger for educational purposes using Python sockets and pynput, focusing on secure communication and ethical testing in an isolated virtual environment.</p>
+</div>
+</div>
+</section>
+
+<section id="articles">
+<div class="container">
+<h2>Articles</h2>
+<div class="card">
+<h4>How to Start with Ethical Hacking</h4>
+<p>Beginner’s guide to understanding ethical hacking, essential tools, and basic practices to stay safe and compliant.</p>
+</div>
+<div class="card">
+<h4>Top 5 Linux Commands for Security Analysts</h4>
+<p>Learn essential Linux commands that every cybersecurity student and aspiring analyst should master for daily tasks.</p>
+</div>
+</div>
+</section>
+
+<section id="ctf">
+<div class="container">
+<h2>CTF Achievements</h2>
+<ul class="achievement-list">
+<li class="card">Breach CTF – 31st place (April 2025)</li>
+<li class="card">DawgCTF – 25th place (April 2025)</li>
+<li class="card">1753CTF – Top 50 placement</li>
+<li class="card">Top 3% global CTF player ranking</li>
+</ul>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<h2>Contact</h2>
+<div class="contact-info">
+<p><i class="fa-solid fa-envelope"></i> mokshnjain7@gmail.com</p>
+<p><i class="fa-solid fa-phone"></i> +91 8419993565</p>
+<p><i class="fa-solid fa-location-dot"></i> Mumbai, India</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>© 2025 Moksh Jain | Cybersecurity Portfolio</p>
+<div class="footer-links">
+<a href="https://github.com/Moksh-jain-07" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/moksh-jain2004/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://tryhackme.com/p/Beast007" target="_blank"><i class="fa-solid fa-terminal"></i></a>
+</div>
+</div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const navLinkItems = document.querySelectorAll(".nav-links a");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("toggle");
+    navLinks.classList.toggle("active");
+  });
+
+  navLinkItems.forEach(link => {
+    link.addEventListener("click", () => {
+      if (navLinks.classList.contains("active")) {
+        hamburger.classList.remove("toggle");
+        navLinks.classList.remove("active");
+      }
+    });
+  });
+
+  const typingTextElement = document.getElementById("typing-text");
+  const text = "Moksh Jain";
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      typingTextElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 150);
+    }
+  }
+  type();
+
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => observer.observe(section));
+});
+</script>
+</body>
+</html>
