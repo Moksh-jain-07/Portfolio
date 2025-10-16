@@ -132,6 +132,7 @@ section.visible {
   font-family: 'Poppins', sans-serif;
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
+  height: 5rem; /* Give height to prevent layout shift */
 }
 
 .typing-cursor {
@@ -265,6 +266,30 @@ h2 {
   color: var(--accent-color);
 }
 
+/* --- Button Styles --- */
+.btn-view-more {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-button-container {
+  margin-top: 2.5rem;
+}
+
+.btn-view-more:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  text-shadow: none;
+}
+
 /* --- CTF --- */
 .achievement-list {
   list-style: none;
@@ -319,8 +344,8 @@ footer {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  h2 { font-size: 2rem; }
-  .intro-content h1 { font-size: 2.5rem; }
+  h1 { font-size: 2.8rem; }
+  .intro-content h1 { font-size: 2.5rem; height: 4rem; }
   .typing-cursor { height: 2.5rem; }
 
   .nav-links {
@@ -399,6 +424,12 @@ footer {
 <a href="https://www.linkedin.com/in/moksh-jain2004/" target="_blank"><i class="fab fa-linkedin"></i></a>
 <a href="https://tryhackme.com/p/Beast007" target="_blank"><i class="fa-solid fa-terminal"></i></a>
 </div>
+<!-- CORRECTED PLACEMENT FOR RESUME BUTTON -->
+<div class="resume-button-container">
+    <a href="Resume.pdf" class="btn-view-more" download>
+        Download Resume <i class="fa-solid fa-file-arrow-down"></i>
+    </a>
+</div>
 </div>
 </section>
 
@@ -411,7 +442,7 @@ footer {
 
 <section id="skills">
 <div class="container">
-<h2>Tools & Expertise</h2>
+<h2>Skills & Tech Stack</h2>
 
 <h3 class="skills-category-title">Cybersecurity & Pentesting</h3>
 <div class="skills-grid">
@@ -420,6 +451,19 @@ footer {
 <div class="skill-card"><i class="fa-solid fa-microchip"></i><span>Ghidra</span></div>
 <div class="skill-card"><i class="fa-solid fa-shield-halved"></i><span>Metasploit</span></div>
 <div class="skill-card"><i class="fa-solid fa-water"></i><span>Wireshark</span></div>
+</div>
+
+<h3 class="skills-category-title">Languages</h3>
+<div class="skills-grid">
+<div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+<div class="skill-card"><i class="fa-brands fa-java"></i><span>Java</span></div>
+<div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+<div class="skill-card"><i class="fa-solid fa-terminal"></i><span>Bash</span></div>
+</div>
+
+<h3 class="skills-category-title">Frameworks & Libraries</h3>
+<div class="skills-grid">
+<div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
 </div>
 
 <h3 class="skills-category-title">Tools & Platforms</h3>
@@ -436,6 +480,7 @@ footer {
 <div class="card">
 <h3>Ethical Keylogger using Python</h3>
 <p>Developed a controlled keylogger for educational purposes using Python sockets and pynput, focusing on secure communication and ethical testing in an isolated virtual environment.</p>
+<a href="https://github.com/Moksh-jain-07/Python-keylogger" class="btn-view-more" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
 </div>
 </div>
 </section>
@@ -444,12 +489,34 @@ footer {
 <div class="container">
 <h2>Articles</h2>
 <div class="card">
-<h4>How to Start with Ethical Hacking</h4>
-<p>Beginner’s guide to understanding ethical hacking, essential tools, and basic practices to stay safe and compliant.</p>
+<h4>Blockchain in Digital Forensics</h4>
+<p>Exploring how blockchain's immutability and decentralization can create a tamper-proof chain of custody for digital evidence.</p>
+<a href="CCIDF_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
 </div>
 <div class="card">
-<h4>Top 5 Linux Commands for Security Analysts</h4>
-<p>Learn essential Linux commands that every cybersecurity student and aspiring analyst should master for daily tasks.</p>
+<h4>Role of Blockchain in Data Protection</h4>
+<p>Analyzing how blockchain can shift data protection from centralized trust to a user-centric model of cryptographic proof and sovereignty.</p>
+<a href="CSPP_acrticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<div class="card">
+<h4>Requirements Analysis & Specification</h4>
+<p>A look into the critical discipline of defining project needs to prevent scope creep, budget overruns, and project failure.</p>
+<a href="SEPM_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<div class="card">
+    <h4>The Autonomous Data Warehouse</h4>
+    <p>A deep dive into self-driving, self-securing, and self-repairing data warehouses that leverage machine learning for automation.</p>
+    <a href="DWM _article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<div class="card">
+    <h4>Applications of Turing Machines</h4>
+    <p>How a theoretical model defines the limits of computation, problem-solving, and the ultimate quest for Artificial General Intelligence.</p>
+    <a href="TC_CD_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+<div class="card">
+    <h4>Emotional Intelligence in the Workplace</h4>
+    <p>A case study on how emotional intelligence training improved team collaboration, psychological safety, and overall performance in a corporate setting.</p>
+    <a href="EQ_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
 </div>
 </div>
 </section>
@@ -491,48 +558,106 @@ footer {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const navLinkItems = document.querySelectorAll(".nav-links a");
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("toggle");
-    navLinks.classList.toggle("active");
-  });
+  // --- 1. Navbar Logic ---
+  function setupNavbar() {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const navLinkItems = document.querySelectorAll(".nav-links a");
 
-  navLinkItems.forEach(link => {
-    link.addEventListener("click", () => {
-      if (navLinks.classList.contains("active")) {
-        hamburger.classList.remove("toggle");
-        navLinks.classList.remove("active");
-      }
+    // Toggle mobile menu
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("toggle");
+      navLinks.classList.toggle("active");
     });
-  });
 
-  const typingTextElement = document.getElementById("typing-text");
-  const text = "Moksh Jain";
-  let index = 0;
+    // Close mobile menu on link click & handle smooth scroll
+    navLinkItems.forEach(link => {
+      link.addEventListener("click", function(e) {
+        // Close menu if it's open
+        if (navLinks.classList.contains("active")) {
+          hamburger.classList.remove("toggle");
+          navLinks.classList.remove("active");
+        }
 
-  function type() {
-    if (index < text.length) {
-      typingTextElement.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, 150);
-    }
+        // Smooth scroll for all browsers
+        const href = this.getAttribute("href");
+        if (href.startsWith("#")) {
+          e.preventDefault();
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+    });
   }
-  type();
 
-  const sections = document.querySelectorAll("section");
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+  // --- 2. Dynamic Typing Effect ---
+  function setupTypingEffect() {
+    const typingTextElement = document.getElementById("typing-text");
+    if (!typingTextElement) return; // Exit if element not found
+    
+    const words = ["Moksh Jain", "Cybersecurity Student", "Ethical Hacker", "CTF Player"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 150;
+    const deletingSpeed = 75;
+    const delayBetweenWords = 2000;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      
+      if (isDeleting) {
+        // Deleting characters
+        typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        // Typing characters
+        typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
       }
-    });
-  }, { threshold: 0.15 });
 
-  sections.forEach(section => observer.observe(section));
+      let speed = isDeleting ? deletingSpeed : typingSpeed;
+
+      // If word is fully typed
+      if (!isDeleting && charIndex === currentWord.length) {
+        speed = delayBetweenWords;
+        isDeleting = true;
+      } 
+      // If word is fully deleted
+      else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = typingSpeed;
+      }
+
+      setTimeout(type, speed);
+    }
+    
+    type();
+  }
+
+  // --- 3. Scroll Reveal Animation ---
+  function setupScrollAnimations() {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 }); // Trigger when 15% of the section is visible
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  // --- Initialize all scripts ---
+  setupNavbar();
+  setupTypingEffect();
+  setupScrollAnimations();
 });
 </script>
 </body>
