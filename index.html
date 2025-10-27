@@ -267,9 +267,16 @@ h2 {
 }
 
 /* --- Button Styles --- */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to stack on smaller screens */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .btn-view-more {
   display: inline-block;
-  margin-top: 1rem;
+  /* margin-top: 1rem; <-- Removed this to let the container handle spacing */
   padding: 0.5rem 1rem;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
@@ -480,7 +487,9 @@ footer {
 <div class="card">
 <h3>Ethical Keylogger using Python</h3>
 <p>Developed a controlled keylogger for educational purposes using Python sockets and pynput, focusing on secure communication and ethical testing in an isolated virtual environment.</p>
-<a href="https://github.com/Moksh-jain-07/Python-keylogger" class="btn-view-more" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+<div class="card-actions">
+    <a href="https://github.com/Moksh-jain-07/Python-keylogger" class="btn-view-more" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+</div>
 </div>
 </div>
 </section>
@@ -491,32 +500,50 @@ footer {
 <div class="card">
 <h4>Blockchain in Digital Forensics</h4>
 <p>Exploring how blockchain's immutability and decentralization can create a tamper-proof chain of custody for digital evidence.</p>
-<a href="https://github.com/Moksh-jain-07/Atricles/blob/main/CCIDF_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+<div class="card-actions">
+    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/CCIDF_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <a href="https://youtu.be/U2FRMbAlKXM" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+</div>
 </div>
 <div class="card">
 <h4>Role of Blockchain in Data Protection</h4>
 <p>Analyzing how blockchain can shift data protection from centralized trust to a user-centric model of cryptographic proof and sovereignty.</p>
-<a href="https://github.com/Moksh-jain-07/Atricles/blob/main/CSPP_acrticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+<div class="card-actions">
+    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/CSPP_acrticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <a href="https://youtu.be/aFQOf6GuXxo" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+</div>
 </div>
 <div class="card">
 <h4>Requirements Analysis & Specification</h4>
 <p>A look into the critical discipline of defining project needs to prevent scope creep, budget overruns, and project failure.</p>
-<a href="https://github.com/Moksh-jain-07/Atricles/blob/main/SEPM_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+<div class="card-actions">
+    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/SEPM_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <a href="https://youtu.be/H31CQYQdMt8" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+</div>
 </div>
 <div class="card">
     <h4>The Autonomous Data Warehouse</h4>
     <p>A deep dive into self-driving, self-securing, and self-repairing data warehouses that leverage machine learning for automation.</p>
-    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/DWM%20_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <div class="card-actions">
+        <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/DWM%20_article.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+        <a href="https://youtu.be/lX4Qyxv_v0w" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+    </div>
 </div>
 <div class="card">
     <h4>Applications of Turing Machines</h4>
     <p>How a theoretical model defines the limits of computation, problem-solving, and the ultimate quest for Artificial General Intelligence.</p>
-    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/TC_CD_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <div class="card-actions">
+        <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/TC_CD_arcticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+        <a href="https://youtu.be/vBfyYONtV7Q" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+    </div>
 </div>
 <div class="card">
     <h4>Emotional Intelligence in the Workplace</h4>
     <p>A case study on how emotional intelligence training improved team collaboration, psychological safety, and overall performance in a corporate setting.</p>
-    <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/SFBL_acticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+    <div class="card-actions">
+        <a href="https://github.com/Moksh-jain-07/Atricles/blob/main/SFBL_acticle.md" class="btn-view-more" target="_blank">View Article <i class="fa-solid fa-arrow-right-long"></i></a>
+        <a href="https://youtu.be/BKE-Zi_BzAU" class="btn-view-more" target="_blank">Watch Video <i class="fa-solid fa-play"></i></a>
+    </div>
 </div>
 </div>
 </section>
@@ -662,5 +689,3 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
-
-
